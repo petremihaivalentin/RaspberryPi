@@ -1,0 +1,12 @@
+#!usr/bin/gnuplot -persist
+
+set title "TEST"
+set terminal pngcairo size 800,600 font ',12'
+set termoption enhanced
+f(x) = a*x**2 + b*x + c
+fit f(x) 'centre_matrix1.txt' via a,b,c
+
+plot 'centre_matrix.txt' with points title 'data points', \
+	f(x) with lines title sprintf('trendline curve f(x) = %.3f * x^2 + %.3f * x + %.3f', a,b,c)
+
+update 'centre_matrix_out.txt'

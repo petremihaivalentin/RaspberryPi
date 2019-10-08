@@ -1,0 +1,28 @@
+
+#cd test
+
+PATH=$PATH:/home/pi/raspiraw-master:/home/pi/raspiraw-master/tools:/home/pi/dcraw-master
+
+cd ../../raspiraw-master
+./camera_i2c
+cd ../test/script_test
+
+#./camera_setup
+
+python relay_on.py
+
+640x64 1000 &
+
+python relay_off.py
+
+sleep 5
+
+raw2ppm d 0 600 d
+
+rm centre_matrix.txt
+
+python image2.py
+
+gnuplot plot_test > out.png
+
+python g.py
