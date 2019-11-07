@@ -34,3 +34,6 @@ This repo contains:
   - Measuring the Gravitational Acceleration using Raspberry Pi.docx - full extensive documentation.
   
   The documentation contains details of how everything works, motivation, as well as pictures of the setup and outcome.
+  
+  Cheers to Hermann-SW for providing the software that forces the V2 camera to capture over 990 fps.
+  Reference: https://github.com/Hermann-SW/raspiraw
